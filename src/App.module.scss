@@ -1,0 +1,28 @@
+@import "./assets/scss/global-variables";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  .navigation {
+    display: flex;
+    .link {
+      font-size: $font-size-medium;
+      flex: 1 1 calc(100% / 3);
+      text-decoration: none;
+      color: $color-black;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $color-primary-2;
+
+      &__selected {
+        background: $color-primary-1;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  .content {
+    padding: $padding-medium;
+  }
+}

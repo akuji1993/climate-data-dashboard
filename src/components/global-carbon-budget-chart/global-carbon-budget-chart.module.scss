@@ -1,0 +1,36 @@
+@import "../../assets/scss/global-variables.scss";
+
+.GlobalCarbonBudgetChart {
+  margin: $margin-medium 0;
+  display: flex;
+  flex-direction: column;
+
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $margin-large;
+
+    .item {
+      flex: 1 1 calc(33% - $margin-small);
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-style: solid;
+      border-width: 2px;
+      margin: 0 $margin-small;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

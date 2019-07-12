@@ -1,0 +1,10 @@
+@import "../../assets/scss/global-variables.scss";
+
+.EmissionsByCountryPage {
+  display: flex;
+  flex-direction: column;
+
+  .paragraph {
+    margin-top: $margin-xlarge;
+  }
+}
