@@ -1,3 +1,17 @@
+/* roboto-mono-regular - latin */
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/roboto-mono-v7-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Roboto Mono"), local("RobotoMono-Regular"),
+    /* IE6-IE8 */ url("./assets/fonts/roboto-mono-v7-latin-regular.eot?#iefix") format("embedded-opentype"),
+    /* Super Modern Browsers */ url("./assets/fonts/roboto-mono-v7-latin-regular.woff2") format("woff2"),
+    /* Modern Browsers */ url("./assets/fonts/roboto-mono-v7-latin-regular.woff") format("woff"),
+    /* Safari, Android, iOS */ url("./assets/fonts/roboto-mono-v7-latin-regular.ttf") format("truetype"),
+    /* Legacy iOS */ url("./assets/fonts/roboto-mono-v7-latin-regular.svg#RobotoMono") format("svg");
+}
+
 body {
   margin: 0;
   font-family: "Roboto Mono";
@@ -6,6 +20,6 @@ body {
   box-sizing: border-box;
 }
 
-* {
+input {
   font-family: "Roboto Mono";
 }
