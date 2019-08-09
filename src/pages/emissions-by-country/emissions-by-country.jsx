@@ -108,6 +108,7 @@ class EmissionsByCountryPage extends Component {
             <Insights data={countryData.data} years={40} />
           </>
         )}
+        <h3>Sources</h3>
         <span className={style.paragraph}>
           Original data can be found here:{" "}
           <a

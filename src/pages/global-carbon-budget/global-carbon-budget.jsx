@@ -6,7 +6,7 @@ import data from "../../assets/data/global-carbon-budget.json";
 const GlobalCarbonBudget = () => (
   <div className={style.GlobalCarbonBudget}>
     <GlobalCarbonBudgetChart data={data} />
-
+    <h3>Sources</h3>
     <span className={style.paragraph}>
       Original data can be found here:{" "}
       <a
