@@ -10,7 +10,7 @@
     flex-wrap: wrap;
 
     .trend {
-      flex: 1 1 20%;
+      flex: 1 1 15%;
       max-width: 15%;
       height: 50px;
       display: flex;
@@ -63,6 +63,14 @@
         &__decrease {
           color: $color-primary-3;
         }
+      }
+    }
+
+    @media (max-width: $media-mobile) {
+      .trend {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: $margin-medium;
       }
     }
   }

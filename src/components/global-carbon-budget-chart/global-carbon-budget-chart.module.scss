@@ -1,7 +1,6 @@
 @import "../../assets/scss/global-variables.scss";
 
 .GlobalCarbonBudgetChart {
-  margin: $margin-medium 0;
   display: flex;
   flex-direction: column;
 
@@ -30,6 +29,17 @@
 
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+
+  @media (max-width: $media-mobile) {
+    .filter {
+      flex-wrap: wrap;
+      .item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 0 0 $margin-medium 0;
       }
     }
   }

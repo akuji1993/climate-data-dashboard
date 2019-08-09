@@ -92,7 +92,7 @@ class EmissionsByCountryPage extends Component {
 
     return (
       <div className={style.EmissionsByCountryPage}>
-        <span>Search for a country: </span>
+        <h3>Search for a Country </h3>
         <AutoComplete
           options={countries}
           onChange={countryCode => this.setCountryData(countryCode)}

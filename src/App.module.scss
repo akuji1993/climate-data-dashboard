@@ -9,6 +9,7 @@
       font-size: $font-size-medium;
       flex: 1 1 calc(100% / 3);
       text-decoration: none;
+      text-align: center;
       color: $color-black;
       height: 50px;
       display: flex;
@@ -22,7 +23,18 @@
       }
     }
   }
+
+  @media (max-width: $media-mobile) {
+    .navigation {
+      flex-direction: column;
+      .link {
+        flex: 1 1 100%;
+        min-height: 50px;
+      }
+    }
+  }
+
   .content {
-    padding: $padding-medium;
+    padding: 0 $padding-medium;
   }
 }

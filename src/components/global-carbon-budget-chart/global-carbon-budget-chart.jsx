@@ -87,6 +87,7 @@ class GlobalCarbonBudgetChart extends Component {
 
     return (
       <div className={style.GlobalCarbonBudgetChart}>
+        <h3>Filter</h3>
         <div className={style.filter}>
           {lineConfigs.map((lineConfig, idx) => (
             <div
@@ -102,6 +103,7 @@ class GlobalCarbonBudgetChart extends Component {
             </div>
           ))}
         </div>
+        <h3>Graph</h3>
         {data && (
           <ResponsiveContainer width={"99%"} height={600}>
             <LineChart data={data} margin={{ left: -25 }}>
