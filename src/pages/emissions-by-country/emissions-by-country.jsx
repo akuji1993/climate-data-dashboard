@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import data from "../../assets/data/emissions-per-country.json";
 import EmissionsByCountryChart from "../../components/emissions-by-country-chart/emissions-by-country-chart";
 import AutoComplete from "../../components/autocomplete/autocomplete";
+import Insights from "../../components/insights/insights";
 import style from "./emissions-by-country.module.scss";
 
 class EmissionsByCountryPage extends Component {
   constructor() {
     super();
     this.state = {
-      chosenCountry: null,
       countryData: null,
       countries: null,
       reducedData: null
@@ -74,7 +74,8 @@ class EmissionsByCountryPage extends Component {
 
     this.setState({
       reducedData,
-      countries
+      countries,
+      countryData: reducedData["DEU"]
     });
   }
 
@@ -97,10 +98,15 @@ class EmissionsByCountryPage extends Component {
           onChange={countryCode => this.setCountryData(countryCode)}
         />
         {countryData && (
-          <EmissionsByCountryChart
-            data={countryData.data}
-            label={countryData.label}
-          />
+          <>
+            <EmissionsByCountryChart
+              data={countryData.data}
+              label={countryData.label}
+            />
+            <Insights data={countryData.data} years={10} />
+            <Insights data={countryData.data} years={20} />
+            <Insights data={countryData.data} years={40} />
+          </>
         )}
         <span className={style.paragraph}>
           Original data can be found here:{" "}

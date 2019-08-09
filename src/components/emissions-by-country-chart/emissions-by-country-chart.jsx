@@ -12,9 +12,10 @@ import {
 import style from "./emissions-by-country-chart.module.scss";
 import PropTypes from "proptypes";
 
-const EmissionsByCountryChart = ({ data }) => {
+const EmissionsByCountryChart = ({ data, label }) => {
   return (
     <div className={style.EmissionsByCountryChart}>
+      <h3>Emissions for {label}</h3>
       {data && (
         <ResponsiveContainer width={"99%"} height={600}>
           <BarChart

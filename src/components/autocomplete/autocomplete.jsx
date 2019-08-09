@@ -44,7 +44,7 @@ class AutoComplete extends React.Component {
           value={inputValue}
           onChange={event => this.handleChange(event.target.value)}
         />
-        {inputValue.length > 3 && (
+        {inputValue.length > 3 && filteredOptions.length > 0 && (
           <div className={style.suggestions}>
             {filteredOptions.map((opt, idx) => (
               <div

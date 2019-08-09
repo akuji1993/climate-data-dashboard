@@ -2,25 +2,36 @@
 
 .AutoComplete {
   position: relative;
+  height: 30px;
+  width: 300px;
+  max-width: 300px;
+  padding: 0 $padding-medium;
+  border: 1px solid $color-black;
+
   .input {
     display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0px;
+    border: none;
+    height: 100%;
     align-items: center;
     outline: none;
     font-size: 16px;
-    height: 30px;
-    width: 300px;
   }
 
   .suggestions {
     position: absolute;
-    top: 36px;
+    top: 40px;
+    left: 0px;
     border: 1px solid $color-black;
     background: $color-white;
-    padding: 10px;
+    width: 100%;
     z-index: 10;
 
     .suggestion {
       cursor: pointer;
+      padding: $padding-medium;
       &:hover {
         background: $color-primary-1;
       }
