@@ -68,6 +68,15 @@ class EmissionsWorldMap extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.setState({
+      reducedData: [],
+      countries: [],
+      selectedCountry: null,
+      sliderValue: null
+    });
+  }
+
   setSliderValue(value) {
     this.setState({
       sliderValue: value
@@ -80,9 +89,7 @@ class EmissionsWorldMap extends React.Component {
       <div className={style.EmissionsWorldMap}>
         <WorldMap
           data={reducedData[sliderValue]}
-          onChangeCountry={countryId =>
-            this.setState({ selectedCountry: countryId })
-          }
+          onChangeCountry={countryId => this.setState({ selectedCountry: countryId })}
         />
         <Slider
           id="world-map-slider"
@@ -93,10 +100,7 @@ class EmissionsWorldMap extends React.Component {
         />
         {selectedCountry && (
           <div className={style.countryInfo}>
-            <CountryDetails
-              data={reducedData[sliderValue][selectedCountry]}
-              label={countries[selectedCountry].label}
-            />
+            <CountryDetails data={reducedData[sliderValue][selectedCountry]} label={countries[selectedCountry].label} />
           </div>
         )}
       </div>
