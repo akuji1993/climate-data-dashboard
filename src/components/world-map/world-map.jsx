@@ -117,7 +117,9 @@ class WorldMap extends React.Component {
                           key={i}
                           geography={geography}
                           projection={projection}
-                          onClick={geoInfo => this.selectCountry(geoInfo)}
+                          onClick={geoInfo =>
+                            countryData ? this.selectCountry(geoInfo) : {}
+                          }
                           style={{
                             default: {
                               fill: this.isSelected(geography.id)
