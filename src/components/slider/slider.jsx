@@ -1,4 +1,5 @@
 import React from "react";
+import { Range, getTrackBackground } from "react-range";
 import style from "./slider.module.scss";
 
 class Slider extends React.Component {
@@ -8,41 +9,76 @@ class Slider extends React.Component {
     this.inputRef = React.createRef();
   }
 
-  getSliderPos() {
-    const { min, max, value } = this.props;
-    const width = this.inputRef.current.clientWidth;
-    console.log(width);
-
-    const percentage = (value - min) / (max - min);
-
-    return `${width * percentage - 48 * percentage}px`;
-  }
-
   render() {
-    const { onChange, id, value, min, max } = this.props;
+    const { onChange, value, min, max } = this.props;
     return (
-      <div className={style.Slider}>
-        <input
-          id={id}
-          ref={this.inputRef}
-          onChange={e => {
-            console.log(this.inputRef);
-            onChange(e.target.value);
-          }}
-          className={style.Slider}
-          type="range"
+      <div
+        className={style.Slider}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          margin: "2em"
+        }}>
+        <Range
+          step={1}
           min={min}
           max={max}
-          step={1}
-          value={value ? value : ""}
-        />
-        {this.inputRef &&
-          this.inputRef.current &&
-          this.inputRef.current.valueAsNumber && (
-            <div className={style.label} style={{ left: this.getSliderPos() }}>
-              {this.inputRef.current.valueAsNumber}
+          values={[value]}
+          onChange={values => onChange(values[0])}
+          renderTrack={({ props, children }) => (
+            <div
+              style={{
+                ...props.style,
+                height: "36px",
+                display: "flex",
+                width: "100%"
+              }}>
+              <div
+                ref={props.ref}
+                style={{
+                  height: "5px",
+                  width: "100%",
+                  borderRadius: "4px",
+                  background: getTrackBackground({
+                    values: [value],
+                    colors: ["#75d701", "#ccc"],
+                    min: min,
+                    max: max
+                  }),
+                  alignSelf: "center"
+                }}>
+                {children}
+              </div>
             </div>
           )}
+          renderThumb={({ props, isDragged }) => (
+            <div
+              {...props}
+              style={{
+                ...props.style,
+                height: "42px",
+                width: "42px",
+                borderRadius: "4px",
+                backgroundColor: "#FFF",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: "0px 2px 6px #AAA"
+              }}>
+              <div
+                style={{
+                  height: "16px",
+                  width: "5px",
+                  backgroundColor: isDragged ? "#75d701" : "#CCC"
+                }}
+              />
+            </div>
+          )}
+        />
+        <output style={{ marginTop: "30px" }} id="output">
+          {value}
+        </output>
       </div>
     );
   }
