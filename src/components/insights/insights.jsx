@@ -2,37 +2,11 @@ import React from "react";
 import style from "./insights.module.scss";
 import classNames from "classnames";
 import { findTrends } from "../../utils/trends";
-import {
-  FaPlug,
-  FaIndustry,
-  FaBuilding,
-  FaCarSide,
-  FaFlask,
-  FaChevronUp,
-  FaChevronDown
-} from "react-icons/fa";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { getIcon } from "../../utils/icons";
 
 const Insights = ({ data, years }) => {
   const trends = findTrends(data, years);
-
-  const getIcon = category => {
-    switch (category) {
-      case "power_industry":
-        return <FaPlug />;
-      case "other_industrial_combustion":
-        return <FaIndustry />;
-      case "buildings":
-        return <FaBuilding />;
-      case "transport":
-        return <FaCarSide />;
-      case "non_combustion":
-        return <FaFlask />;
-      default:
-        return <FaPlug />;
-    }
-  };
-
-  console.log(trends);
 
   return (
     <div className={style.Insights}>

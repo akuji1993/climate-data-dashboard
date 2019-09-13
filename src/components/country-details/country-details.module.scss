@@ -1,0 +1,55 @@
+@import "../../assets/scss/global-variables.scss";
+.CountryDetails {
+  display: flex;
+  flex-direction: column;
+
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .category {
+      display: flex;
+      flex: 1 1 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+      justify-content: flex-start;
+      align-items: center;
+      height: 50px;
+      margin: $margin-medium 0;
+      padding: 0 $padding-small;
+      border: 1px solid $color-black;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        flex: 0;
+        height: 100%;
+        margin-right: $margin-medium;
+
+        svg {
+          font-size: 30px;
+        }
+      }
+
+      .description {
+        flex: 1;
+      }
+
+      .value {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @media (max-width: $media-mobile) {
+    .details {
+      flex-direction: column;
+      .category {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

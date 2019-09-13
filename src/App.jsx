@@ -5,6 +5,7 @@ import { withRouter } from "react-router";
 import { Route, Link } from "react-router-dom";
 import GlobalCarbonBudgetPage from "./pages/global-carbon-budget/global-carbon-budget";
 import EmissionsByCountryPage from "./pages/emissions-by-country/emissions-by-country";
+import EmissionsWorldMapPage from "./pages/emissions-world-map/emissions-world-map";
 import WelcomePage from "./pages/welcome-page/welcome-page";
 
 const links = [
@@ -17,8 +18,8 @@ const links = [
     label: "Global Carbon Budget"
   },
   {
-    path: "/somethingelse",
-    label: "Something else"
+    path: "/emissions-world-map",
+    label: "Emissions Worldmap"
   }
 ];
 
@@ -55,7 +56,7 @@ const App = props => {
           path="/emissions-by-country"
           component={EmissionsByCountryPage}
         />
-        <Route path="/somethingelse" render={() => <div />} />
+        <Route path="/emissions-world-map" component={EmissionsWorldMapPage} />
       </div>
     </div>
   );
