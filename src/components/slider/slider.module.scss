@@ -1,9 +1,11 @@
 @import "../../assets/scss/global-variables.scss";
 
 $slider-height: 30px;
-$slider-width: 20px;
+$slider-width: 50px;
 
 .Slider {
+  position: relative;
+
   input {
     -webkit-appearance: none; /* Override default CSS styles */
     appearance: none;
@@ -36,5 +38,13 @@ $slider-width: 20px;
       background: $color-primary-3; /* Green background */
       cursor: pointer; /* Cursor on hover */
     }
+  }
+
+  .label {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    position: absolute;
+    top: 5px;
   }
 }
